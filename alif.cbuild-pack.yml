@@ -1,0 +1,11 @@
+cbuild-pack:
+  resolved-packs:
+    - resolved-pack: ARM::CMSIS@6.1.0
+      selected-by-pack:
+        - ARM::CMSIS@6.1.0
+    - resolved-pack: ARM::CMSIS-FreeRTOS@10.5.1
+      selected-by-pack:
+        - ARM::CMSIS-FreeRTOS@10.5.1
+    - resolved-pack: AlifSemiconductor::Ensemble@2.2.0
+      selected-by-pack:
+        - AlifSemiconductor::Ensemble@2.2.0
