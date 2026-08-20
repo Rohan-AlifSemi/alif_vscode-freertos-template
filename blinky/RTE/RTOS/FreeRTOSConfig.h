@@ -51,12 +51,12 @@
 //  <o>Minimal stack size [words] <0-65535>
 //  <i> Stack for idle task and default task stack in words.
 //  <i> Default: 128
-#define configMINIMAL_STACK_SIZE                ((uint16_t)(128))
+#define configMINIMAL_STACK_SIZE                ((uint16_t)(256))
 
 //  <o>Total heap size [bytes] <0-0xFFFFFFFF>
 //  <i> Heap memory size in bytes.
 //  <i> Default: 8192
-#define configTOTAL_HEAP_SIZE                   ((size_t)8192)
+#define configTOTAL_HEAP_SIZE                   ((size_t)16384)
 
 //  <o>Kernel tick frequency [Hz] <0-0xFFFFFFFF>
 //  <i> Kernel tick rate in Hz.
@@ -66,7 +66,7 @@
 //  <o>Timer task stack depth [words] <0-65535>
 //  <i> Stack for timer task in words.
 //  <i> Default: 80
-#define configTIMER_TASK_STACK_DEPTH            80
+#define configTIMER_TASK_STACK_DEPTH            160
 
 //  <o>Timer task priority <0-56>
 //  <i> Timer task priority.
@@ -104,7 +104,7 @@
 //  <i> Enable or disable stack overflow checking.
 //  <i> Callback function vApplicationStackOverflowHook implementation is required when stack checking is enabled.
 //  <i> Default: 0
-#define configCHECK_FOR_STACK_OVERFLOW          2
+#define configCHECK_FOR_STACK_OVERFLOW          0
 
 //  <q>Use idle hook
 //  <i> Enable callback function call on each idle task iteration.
@@ -143,12 +143,12 @@
 //  <q>Initialize Event Recorder
 //  <i> Initialize Event Recorder before FreeRTOS kernel start.
 //  <i> Default: 1
-#define configEVR_INITIALIZE                    1
+#define configEVR_INITIALIZE                    0
 
 //  <e>Setup recording level filter
 //  <i> Enable configuration of FreeRTOS events recording level
 //  <i> Default: 1
-#define configEVR_SETUP_LEVEL                   1
+#define configEVR_SETUP_LEVEL                   0
 
 //  <o>Tasks functions
 //  <i> Define event recording level bitmask for events generated from Tasks functions.
@@ -213,13 +213,13 @@
 //  <q> Use TrustZone Secure Side Only
 //  <i> This settings prevents FreeRTOS contex switch to Non-Secure side.
 //  <i> Enable this setting when FreeRTOS runs on the Secure side only.
-#define configRUN_FREERTOS_SECURE_ONLY        0
+#define configRUN_FREERTOS_SECURE_ONLY        1
 
 //  <q>Use TrustZone Security Extension
 //  <i> Using TrustZone affects context handling.
 //  <i> Enable TrustZone when FreeRTOS runs on the Non-Secure side and calls functions from the Secure side.
 //  <i> Default: 1
-#define configENABLE_TRUSTZONE                1
+#define configENABLE_TRUSTZONE                0
 
 //  <o>Minimal secure stack size [words] <0-65535>
 //  <i> Stack for idle task Secure side context in words.
