@@ -5,3 +5,8 @@ tmp/
 *.cbuild-run.yml
 *.cbuild.yml
 *.clangd
+.vscode/cmsis.json
+.vscode/settings.json
+.vscode/launch.json
+.vscode/tasks.json
+
