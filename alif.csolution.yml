@@ -13,8 +13,15 @@ solution:
 
   packs:
     - pack: AlifSemiconductor::Ensemble@2.2.0
-    - pack: ARM::CMSIS-FreeRTOS@10.5.1
     - pack: ARM::CMSIS@6.1.0
+    - pack: ARM::CMSIS-FreeRTOS@11.3.0
+
+  # Select FreeRTOS source (used by blinky via $FreeRTOSLayer$):
+  #   rtos/freertos-kernel.clayer.yml      -> vendored FreeRTOS-Kernel V11.3.1
+  #   rtos/freertos-cmsis-pack.clayer.yml -> ARM::CMSIS-FreeRTOS@11.3.0 pack
+  variables:
+    - FreeRTOSLayer: $SolutionDir()$/rtos/freertos-kernel.clayer.yml
+    # - FreeRTOSLayer: $SolutionDir()$/rtos/freertos-cmsis-pack.clayer.yml
 
   target-types:
     - type: DevKit-E7-HE

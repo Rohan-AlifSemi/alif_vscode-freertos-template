@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Open-CMSIS-Pack/devtools/tools/projmgr/2.12.0/tools/projmgr/schemas/clayer.schema.json
+# Vendored FreeRTOS-Kernel V11.3.1 (libs/FreeRTOS-Kernel-V11.3.1)
+layer:
+  type: RTOS
+  description: FreeRTOS-Kernel V11.3.1 sources included in this repository
+  define:
+    - RTE_CMSIS_RTOS2_FreeRTOS
+  add-path:
+    - ../libs/FreeRTOS-Kernel-V11.3.1/include
+    - ../libs/FreeRTOS-Kernel-V11.3.1/portable/GCC/ARM_CM55_NTZ/non_secure
+  groups:
+    - group: FreeRTOS
+      files:
+        - file: ../libs/FreeRTOS-Kernel-V11.3.1/tasks.c
+        - file: ../libs/FreeRTOS-Kernel-V11.3.1/list.c
+        - file: ../libs/FreeRTOS-Kernel-V11.3.1/queue.c
+        - file: ../libs/FreeRTOS-Kernel-V11.3.1/timers.c
+        - file: ../libs/FreeRTOS-Kernel-V11.3.1/event_groups.c
+        - file: ../libs/FreeRTOS-Kernel-V11.3.1/portable/MemMang/heap_4.c
+        - file: ../libs/FreeRTOS-Kernel-V11.3.1/portable/GCC/ARM_CM55_NTZ/non_secure/port.c
+        - file: ../libs/FreeRTOS-Kernel-V11.3.1/portable/GCC/ARM_CM55_NTZ/non_secure/portasm.c

@@ -217,6 +217,92 @@
                 }
             },
             "problemMatcher": []
+        },
+        {
+            "label": "CMSIS Erase",
+            "type": "shell",
+            "command": [
+                "echo Connect > .cmd.jlink &&",
+                "echo Erase >> .cmd.jlink &&",
+                "echo Exit >> .cmd.jlink &&",
+                "JLink.exe -device AE822FA0E5597BS0_M55_HE -if swd -speed 4000 -commandfile .cmd.jlink"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/",
+                "shell": {
+                    "executable": "cmd.exe",
+                    "args": [
+                        "/d",
+                        "/c"
+                    ]
+                }
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "CMSIS Load",
+            "type": "shell",
+            "command": [
+                "echo Connect > .cmd.jlink &&",
+                "echo LoadFile \"out/blinky/AppKit-E8-HE/debug/blinky.elf\" >> .cmd.jlink &&",
+                "echo Exit >> .cmd.jlink &&",
+                "JLink.exe -device AE822FA0E5597BS0_M55_HE -if swd -speed 4000 -commandfile .cmd.jlink"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/",
+                "shell": {
+                    "executable": "cmd.exe",
+                    "args": [
+                        "/d",
+                        "/c"
+                    ]
+                }
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "CMSIS Run",
+            "type": "shell",
+            "command": "JLinkGDBServerCL.exe",
+            "options": {
+                "cwd": "${workspaceFolder}/",
+                "shell": {
+                    "executable": "cmd.exe",
+                    "args": [
+                        "/d",
+                        "/c"
+                    ]
+                }
+            },
+            "args": [
+                "-device",
+                "AE822FA0E5597BS0_M55_HE",
+                "-endian",
+                "little",
+                "-if",
+                "swd",
+                "-speed",
+                "4000",
+                "-nohalt",
+                "-noir",
+                "-nogui",
+                "-localhostonly",
+                "-silent",
+                "-port",
+                "3333",
+                "-TelnetPort",
+                "4444"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "CMSIS Load+Run",
+            "dependsOn": [
+                "CMSIS Load",
+                "CMSIS Run"
+            ],
+            "dependsOrder": "sequence",
+            "problemMatcher": []
         }
     ]
 }

@@ -1,0 +1,13 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Open-CMSIS-Pack/devtools/tools/projmgr/2.12.0/tools/projmgr/schemas/clayer.schema.json
+# ARM CMSIS-FreeRTOS 11.3.0 pack (CMSIS-RTOS2 wrapper + kernel)
+layer:
+  type: RTOS
+  description: ARM::CMSIS-FreeRTOS@11.3.0 pack
+  components:
+    - component: CMSIS:RTOS2:FreeRTOS&Cortex-M
+    - component: RTOS&FreeRTOS:Config&CMSIS RTOS2
+    - component: RTOS&FreeRTOS:Core&Cortex-M
+    - component: RTOS&FreeRTOS:Event Groups
+    - component: RTOS&FreeRTOS:Heap&Heap_4
+    - component: RTOS&FreeRTOS:Timers
+    - component: CMSIS:OS Tick:SysTick

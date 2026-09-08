@@ -27,9 +27,11 @@ project:
     - ../libs/common_app_utils/fault_handler
     - ../libs/SEGGER_RTT_V796h/RTT
     - ../libs/SEGGER_RTT_V796h/Config
+    - RTE/RTOS
 
   layers:
     - layer: $BoardLayer$
+    - layer: $FreeRTOSLayer$
 
   components:
     - component: ARM::CMSIS:CORE
@@ -39,9 +41,3 @@ project:
     - component: Device:SOC Peripherals:MHU
     - component: Services:Secure Enclave:core&Source
     - component: Services:Secure Enclave:Initialization Helper&Source
-    - component: CMSIS:RTOS2:FreeRTOS&Cortex-M
-    - component: RTOS&FreeRTOS:Config&CMSIS RTOS2
-    - component: RTOS&FreeRTOS:Core&Cortex-M
-    - component: RTOS&FreeRTOS:Event Groups
-    - component: RTOS&FreeRTOS:Heap&Heap_4
-    - component: RTOS&FreeRTOS:Timers

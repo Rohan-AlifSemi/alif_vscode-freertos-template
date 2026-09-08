@@ -259,18 +259,22 @@
 #define INCLUDE_vTaskPrioritySet                1
 #define INCLUDE_eTaskGetState                   1
 #define INCLUDE_vTaskSuspend                    1
+#define INCLUDE_xTaskAbortDelay                 1
 #define INCLUDE_xTimerPendFunctionCall          1
 
 /* Map the FreeRTOS port interrupt handlers to their CMSIS standard names. */
 #define xPortPendSVHandler                      PendSV_Handler
 #define vPortSVCHandler                         SVC_Handler
 
-/* Ensure Cortex-M port compatibility. */
+#if defined(RTE_CMSIS_RTOS2)
+/* CMSIS-FreeRTOS pack: cmsis_os2.c provides SysTick_Handler and calls
+ * xPortSysTickHandler. The pack port is compiled as xPortSysTickHandler
+ * because of this rename. Do not use this remap with the vendored kernel. */
 #define SysTick_Handler                         xPortSysTickHandler
 
 #if (defined(__ARMCC_VERSION) || defined(__GNUC__) || defined(__ICCARM__))
-/* Include debug event definitions */
 #include "freertos_evr.h"
+#endif
 #endif
 
 #endif /* FREERTOS_CONFIG_H */
